@@ -2,12 +2,366 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/youtube.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Youtube Clone By Ritesh 😊</title>
+    <title>YouTube Clone</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      .logo {
+        height: 40px; /* Adjust the size as needed */
+      }
+    </style>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+
+  <body class="bg-gray-100">
+    Header
+    <header   class="bg-white shadow-md p-4 flex justify-between items-center  top-0 w-full z-50 ">
+      <div class="flex">
+        <button id="sidebar-toggle" class="p-2 bg-gray-200 rounded mr-4">
+          <i class="fas fa-bars"></i>
+        </button>
+        <img
+          src="https://www.youtube.com/img/desktop/yt_1200.png"
+          alt="YouTube Logo"
+          class="logo"
+        />
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <div class="flex-grow max-w-md ml-4 flex items-center">
+          <input
+            type="text"
+            placeholder="Search"
+            class="border p-2 rounded w-full"
+            aria-label="Search YouTube"
+          />
+        </div>
+        <button class="p-2 bg-gray-200 rounded">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+      </div>
+      <div class="flex items-center space-x-4">
+        <button class="p-2 bg-gray-200 rounded">
+          <i class="fas fa-video"></i>
+        </button>
+        <button class="p-2 bg-gray-200 rounded">
+          <i class="fas fa-bell"></i>
+        </button>
+        <a href="#"
+          ><img
+            src="https://via.placeholder.com/32"
+            alt="User Avatar"
+            class="rounded-full"
+        /></a>
+      </div>
+    </header>
+
+     <!-- Sidebar and Main Content -->
+  <div class="flex flex-col md:flex-row">
+    <!-- Sidebar -->
+    <aside class="fixed md:relative w-64 bg-white shadow-md h-screen mt-20px  p-4 space-y-4 overflow-y-auto  md:top-auto block md:block">
+      <!-- Navigation Section -->
+      <div>
+        <nav class="space-y-2 py-">
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-video"></i>
+            <span>Shorts</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-play"></i>
+            <span>Subscriptions</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Your Section -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">You</h2>
+        <nav class="space-y-2">
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-user"></i>
+            <span>Your channel</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-history"></i>
+            <span>History</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-list"></i>
+            <span>Playlists</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-video"></i>
+            <span>Your videos</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-clock"></i>
+            <span>Watch Later</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-thumbs-up"></i>
+            <span>Liked videos</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Subscriptions Section -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Subscriptions</h2>
+        <nav class="space-y-2">
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-tv"></i>
+            <span>Dhruv Rathee</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-book"></i>
+            <span>Learn with Sumit - LWS - Bangladesh</span>
+          </a>
+          <a href="#" class="text-gray-700 hover:bg-gray-100 p-2 rounded block">
+            Show more
+          </a>
+        </nav>
+      </div>
+
+      <!-- Explore Section -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Explore</h2>
+        <nav class="space-y-2">
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-fire"></i>
+            <span>Trending</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-music"></i>
+            <span>Music</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-gamepad"></i>
+            <span>Gaming</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-futbol"></i>
+            <span>Sport</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- More from YouTube Section -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">More from YouTube</h2>
+        <nav class="space-y-2">
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-film"></i>
+            <span>YouTube Premium</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-video"></i>
+            <span>YouTube Studio</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-music"></i>
+            <span>YouTube Music</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-child"></i>
+            <span>YouTube Kids</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Other Links Section -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Settings</h2>
+        <nav class="space-y-2">
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-flag"></i>
+            <span>Report history</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-question-circle"></i>
+            <span>Help</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-700 hover:bg-gray-100 p-2 rounded">
+            <i class="fas fa-comments"></i>
+            <span>Send feedback</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Footer Links -->
+      <footer class="mt-4">
+        <div class="text-sm text-gray-600 space-y-1">
+          <p>
+            About | Press | Copyright | Contact us | Creators | Advertise | Developers
+          </p>
+          <p>
+            Terms | Privacy | Policy & Safety | How YouTube works | Test new features
+          </p>
+        </div>
+      </footer>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-4 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Video Card -->
+        <div class="bg-white shadow-md rounded overflow-hidden">
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/7wnove7K-ZQ?si=B10zO4x6sa5l81pZ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <div class="p-4">
+            <h2 class="text-lg font-bold">Another Video Title</h2>
+            <p class="text-sm text-gray-600">Another Channel</p>
+            <p class="text-sm text-gray-600">500K views • 1 week ago</p>
+          </div>
+        </div>
+    
+        <!-- Repeat Video Card as needed -->
+        <!-- Example of another card -->
+        <div class="bg-white shadow-md rounded overflow-hidden">
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/7wnove7K-ZQ?si=B10zO4x6sa5l81pZ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <div class="p-4">
+            <h2 class="text-lg font-bold">Another Video Title</h2>
+            <p class="text-sm text-gray-600">Another Channel</p>
+            <p class="text-sm text-gray-600">500K views • 1 week ago</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-md rounded overflow-hidden">
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/7wnove7K-ZQ?si=B10zO4x6sa5l81pZ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <div class="p-4">
+            <h2 class="text-lg font-bold">Another Video Title</h2>
+            <p class="text-sm text-gray-600">Another Channel</p>
+            <p class="text-sm text-gray-600">500K views • 1 week ago</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-md rounded overflow-hidden">
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/7wnove7K-ZQ?si=B10zO4x6sa5l81pZ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <div class="p-4">
+            <h2 class="text-lg font-bold">Another Video Title</h2>
+            <p class="text-sm text-gray-600">Another Channel</p>
+            <p class="text-sm text-gray-600">500K views • 1 week ago</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-md rounded overflow-hidden">
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/7wnove7K-ZQ?si=B10zO4x6sa5l81pZ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <div class="p-4">
+            <h2 class="text-lg font-bold">Another Video Title</h2>
+            <p class="text-sm text-gray-600">Another Channel</p>
+            <p class="text-sm text-gray-600">500K views • 1 week ago</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-md rounded overflow-hidden">
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/7wnove7K-ZQ?si=B10zO4x6sa5l81pZ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <div class="p-4">
+            <h2 class="text-lg font-bold">Another Video Title</h2>
+            <p class="text-sm text-gray-600">Another Channel</p>
+            <p class="text-sm text-gray-600">500K views • 1 week ago</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-md rounded overflow-hidden">
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/7wnove7K-ZQ?si=B10zO4x6sa5l81pZ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <div class="p-4">
+            <h2 class="text-lg font-bold">Another Video Title</h2>
+            <p class="text-sm text-gray-600">Another Channel</p>
+            <p class="text-sm text-gray-600">500K views • 1 week ago</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-md rounded overflow-hidden">
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/7wnove7K-ZQ?si=B10zO4x6sa5l81pZ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <div class="p-4">
+            <h2 class="text-lg font-bold">Another Video Title</h2>
+            <p class="text-sm text-gray-600">Another Channel</p>
+            <p class="text-sm text-gray-600">500K views • 1 week ago</p>
+          </div>
+        </div>
+    
+        <!-- Add more video cards as needed, following the same pattern -->
+      </div>
+    </main>
+  </div>
   </body>
 </html>
